@@ -4,49 +4,61 @@ namespace OOP
 {
     public class Kitap
     {
-        private string yazarSoyadi;
+        private string authorSurname;
+
 
         public Kitap()
         {
-            Console.WriteLine("\n**KİTAP OLUŞTURULDU**");    
+            Console.WriteLine("\n**KİTAP OLUŞTURULDU**");
         }
 
-        public string KitapAdi { get; set;}
-        public string SayfaSayisi { get; set; }
-        public string YazarAdi { get; set; }
-        public string YazarSoyadi
+        public string Title { get; set; }
+        public string PageCount { get; set; }
+        public string AuthorName { get; set; }
+        public string AuthorSurname
         {
             get
             {
-                return yazarSoyadi;
+                return authorSurname;
             }
             set
             {
-                yazarSoyadi = value.ToUpper();
+                authorSurname = value.ToUpper();
 
             }
 
         }
-        public string YazarinTamAdi => $"{YazarAdi} {YazarSoyadi}"; //lambda sadece get
+        public string AuthorFullName => $"{AuthorName} {AuthorSurname}"; //lambda sadece get
 
-        public void KitapYazdirBaskaMetodla()
+        public void PrinterBook()
         {
             Console.WriteLine($"" +
-                $"\nKitap Adı: {KitapAdi}" +
-                $"\nSayfa Sayısı: {SayfaSayisi}" +
-                $"\nYazar Adı: {YazarAdi}" +
-                $"\nYazar Soyadı: {YazarSoyadi}" +
-                $"\nYazarın Tam Adı: {YazarinTamAdi}");
+                $"\nKitap Adı: {Title}" +
+                $"\nSayfa Sayısı: {PageCount}" +
+                $"\nYazar Adı: {AuthorName}" +
+                $"\nYazar Soyadı: {AuthorSurname}" +
+                $"\nYazarın Tam Adı: {AuthorFullName}");
+        }
+
+        public string Print()
+        {
+            return $"" +
+                $"\nKitap Adı: {this.Title}" +
+                $"\nSayfa Sayısı: {this.PageCount}" +
+                $"\nYazar Adı: {this.AuthorName}" +
+                $"\nYazar Soyadı: {this.AuthorSurname}" +
+                $"\nYazarın Tam Adı: {this.AuthorFullName}";
+
         }
 
         public override string ToString()
         {
             return $"" +
-                $"\nKitap Adı: {KitapAdi}" +
-                $"\nSayfa Sayısı: {SayfaSayisi}" +
-                $"\nYazar Adı: {YazarAdi}" +
-                $"\nYazar Soyadı: {YazarSoyadi}" +
-                $"\nYazarın Tam Adı: {YazarinTamAdi}";
+                $"\nKitap Adı: {Title}" +
+                $"\nSayfa Sayısı: {PageCount}" +
+                $"\nYazar Adı: {AuthorName}" +
+                $"\nYazar Soyadı: {AuthorSurname}" +
+                $"\nYazarın Tam Adı: {AuthorFullName}";
         }
     }
 }
